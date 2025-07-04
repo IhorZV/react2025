@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Posts = () => {
+import {Post} from "./Post";
+
+const Posts = ({posts}) => {
+
     return (
         <div>
-            Posts
+            {posts.map(post => <Post key={post.id} post={post}/>)}
         </div>
     );
 };
