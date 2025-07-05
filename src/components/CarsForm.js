@@ -10,20 +10,27 @@ const CarsForm = ({setTrigger, setCarForUpdate, carForUpdate}) => {
 
     useEffect(() => {
 
-        if(carForUpdate){
-            setValue("brand", carForUpdate.brand , {shouldValidate: true});
-            setValue("price", carForUpdate.price , {shouldValidate: true});
-            setValue("year", carForUpdate.year , {shouldValidate: true});
+        if (carForUpdate) {
+            setValue("brand", carForUpdate.brand, {shouldValidate: true});
+            setValue("price", carForUpdate.price, {shouldValidate: true});
+            setValue("year", carForUpdate.year, {shouldValidate: true});
         }
 
-    },[carForUpdate]);
 
+    }, [carForUpdate]);
 
     const save = async (car) => {
-        await carService.create(car);
-        setTrigger(prev => !prev);
+        console.log(car)
+        if (carForUpdate) {
+            await  carService.updateById(carForUpdate.id, car)
+            setTrigger(prev => !prev);
+        } else {
+            await carService.create(car);
+            setTrigger(prev => !prev);
+        }
         reset()
     }
+
 
     return (
         <form onSubmit={handleSubmit(save)}>

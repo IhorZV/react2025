@@ -12,11 +12,18 @@ const CarsContainer = () => {
         carService.getAll().then(({data}) => setCars(data));
     }, [trigger])
 
+
+    const deletebyId = async (car) => {
+        await carService.deleteById(car.id);
+        setTrigger(prev => !prev);
+    }
+
+
     return (
         <div>
-            <CarsForm setTrigger={setTrigger} carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate} />
+            <CarsForm setTrigger={setTrigger} carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
             <hr/>
-            <Cars cars={cars} setCarForUpdate={setCarForUpdate}/>
+            <Cars cars={cars} setCarForUpdate={setCarForUpdate} deletebyId={deletebyId}/>
         </div>
     );
 };

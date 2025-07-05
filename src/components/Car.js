@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Car = ({car, setCarForUpdate}) => {
+const Car = ({car, setCarForUpdate, deletebyId}) => {
 
     let {id, brand, price, year} = car;
 
@@ -11,7 +11,9 @@ const Car = ({car, setCarForUpdate}) => {
             <div>price - {price}</div>
             <div>year - {year}</div>
             <button onClick={()=>setCarForUpdate(car)}>update</button>
-            <button>delete</button>
+            <button onClick={()=> {
+                deletebyId(car)
+            }}>delete</button>
         </div>
     );
 };
