@@ -1,11 +1,11 @@
 import React from 'react';
 
-const HomePage = () => {
+const CommentsPage = () => {
     return (
         <div>
-            HomePage
+            CommentsPage
         </div>
     );
 };
 
-export {HomePage};
+export {CommentsPage};
