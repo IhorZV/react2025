@@ -1,12 +1,15 @@
 import React from 'react';
 
 import {Users} from "../components/UsersContainer/Users";
-import {Outlet} from "react-router-dom";
+import {Outlet, useLoaderData} from "react-router-dom";
 
 const UsersPage = () => {
+
+    const {data} = useLoaderData();
+
     return (
         <div>
-            <Users/>
+            <Users users={data} />
             <Outlet/>
         </div>
     );
