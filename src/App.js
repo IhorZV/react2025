@@ -1,13 +1,14 @@
 import React from 'react';
 
-import {MyComponent} from "./components/MyComponent/MyComponent";
+import {A} from "./components/A";
+
 
 const App = () => {
+
+
     return (
         <div>
-            <MyComponent>
-                <h3>hello children</h3>
-            </MyComponent>
+                <A/>
         </div>
     );
 };
