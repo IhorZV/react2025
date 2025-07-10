@@ -1,16 +1,14 @@
-import React from 'react';
-
 import {A} from "./components/A";
 
 
 const App = () => {
-
-
     return (
         <div>
-                <A/>
+            <A/>
         </div>
     );
 };
 
-export {App};
+export {
+    App,
+};

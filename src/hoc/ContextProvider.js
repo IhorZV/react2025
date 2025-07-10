@@ -1,15 +1,12 @@
-import React, {createContext} from 'react';
-
+import {createContext} from "react";
 
 const Context = createContext(null);
-
 const ContextProvider = ({children}) => {
     return (
-
         <div>
-            <ContextProvider value={"wfqwf"}>
+            <Context.Provider value={'hahaha'}>
                 {children}
-            </ContextProvider>
+            </Context.Provider>
         </div>
     );
 };
